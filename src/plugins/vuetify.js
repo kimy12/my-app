@@ -1,13 +1,12 @@
 import Vue from 'vue';
 import Vuetify from 'vuetify/lib/framework';
-import '@mdi/font/css/materialdesignicons.css'
+import '@fortawesome/fontawesome-free/css/all.css'
 
-Vue.use(Vuetify);
+Vue.use(Vuetify, {
+  iconfont: 'fa'
+ })
 
 export default new Vuetify({
-  icons: {
-    iconfont: 'mdi',
-  },
 });
 
 

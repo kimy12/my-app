@@ -1,25 +1,42 @@
 <template>
+
+<!-- header colour: #145de7 -->
   <div class="nav-container">
-    <!-- <v-toolbar title="Application">
-      <v-btn variant="plain">
-        Button
-      </v-btn>
-    </v-toolbar> -->
-    <v-navigation-drawer
-        v-model="drawer"
-        :rail="rail"
-        permanent
-        @click="rail = false"
-      >
-    <v-app-bar-nav-icon></v-app-bar-nav-icon>
-    <v-app-bar-title>Application</v-app-bar-title>
-    <v-list density="compact" nav>
-      <v-list-item prepend-icon="fa-solid fa-house" title="Home" value="home"></v-list-item>
-      <!-- <v-list-item prepend-icon="mdi-home-city" title="Home" value="home"></v-list-item> -->
-      <v-list-item prepend-icon="mdi-account" title="My Account" value="account"></v-list-item>
-      <v-list-item prepend-icon="mdi-account-group-outline" title="Users" value="users"></v-list-item>
-    </v-list>
-    </v-navigation-drawer>
+    <!-- <v-app-bar-nav-icon @click="drawer = !drawer" />
+    <v-navigation-drawer v-model="drawer">
+      <v-list-item>
+        <v-list-item-content>
+          <v-list-item-title class="text-h6"> Dashboard </v-list-item-title>
+          <v-list-item-subtitle> Navigation drawers</v-list-item-subtitle>
+        </v-list-item-content>
+      </v-list-item>
+      <v-divider></v-divider>
+      <v-list dense nav>
+        <v-list-item v-for="item in items" :key="item.title" link>
+          <v-list-item-icon>
+            <v-icon>{{ item.icon }}</v-icon>
+          </v-list-item-icon>
+
+          <v-list-item-content>
+            <v-list-item-title>{{ item.title }}</v-list-item-title>
+          </v-list-item-content>
+        </v-list-item>
+      </v-list>
+    </v-navigation-drawer> -->
+    <v-toolbar title="my weather" extended>
+      <v-app-bar-title class="title">my weather</v-app-bar-title>
+      <v-spacer></v-spacer>
+      <v-toolbar-items class="hidden-xs-only">
+        <v-btn
+          flat
+          v-for="item in items"
+          :key="item.title"
+          >
+          <v-icon left dark>{{ item.icon }}</v-icon>
+          {{ item.title }}
+        </v-btn>
+      </v-toolbar-items>
+    </v-toolbar>
   </div>
 </template>
 
@@ -27,11 +44,9 @@
 export default {
   data(){
     return {
-      drawer : true,
+      drawer : false,
       items: [
-        { title: 'Home', icon: 'mdi-home-city' },
-        { title: 'My Account', icon: 'mdi-account' },
-        { title: 'Users', icon: 'mdi-account-group-outline' },
+        { title: 'dayily note', icon: 'fa-solid fa-book' },
       ],
       rail: true,
     }
@@ -40,6 +55,8 @@ export default {
 }
 </script>
 
-<style>
-
+<style scoped>
+.title {
+  color: #145de7;
+}
 </style>
