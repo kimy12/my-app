@@ -3,7 +3,6 @@
   <v-card
     color="grey-lighten-4"
     flat
-    height="200px"
     rounded="0"
   >
     <v-toolbar title="my weather" flat outlined>
